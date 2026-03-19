@@ -1,0 +1,37 @@
+original_name,short_name
+Country Name,country
+Country Code,country_code
+Year,year
+Access to electricity (% of population),electricity_access
+"Air transport, freight (million ton-km)",air_freight
+"Air transport, passengers carried",air_passengers
+Container port traffic (TEU: 20 foot equivalent units),container_traffic
+Control of Corruption: Estimate,corr_control_est
+Control of Corruption: Number of Sources,corr_control_n
+Control of Corruption: Percentile Rank,corr_control_rank
+Current account balance (% of GDP),cab_gdp_pct
+"Current account balance (BoP, current US$)",cab_usd
+Export value index (2015 = 100),export_value_idx
+Export volume index (2015 = 100),export_volume_idx
+Exports of goods and services (annual % growth),exports_growth
+Exports of goods and services (current US$),exports_usd
+GDP growth (annual %),gdp_growth
+GDP per capita (current US$),gdp_pc
+"GNI per capita, Atlas method (current US$)",gni_pc_atlas
+Gini index,gini
+Government Effectiveness: Estimate,gov_eff_est
+Government Effectiveness: Number of Sources,gov_eff_n
+Import value index (2015 = 100),import_value_idx
+Import volume index (2015 = 100),import_volume_idx
+Imports of goods and services (% of GDP),imports_gdp_pct
+Individuals using the Internet (% of population),internet_users_pct
+Political Stability and Absence of Violence/Terrorism: Estimate,pol_stab_est
+Political Stability and Absence of Violence/Terrorism: Number of Sources,pol_stab_n
+"Railways, goods transported (million ton-km)",rail_freight
+"Railways, passengers carried (million passenger-km)",rail_passengers
+"Tariff rate, applied, simple mean, all products (%)",tariff_applied_pct
+"Tariff rate, most favored nation, weighted mean, all products (%)",tariff_mfn_pct
+"Unemployment, total (% of total labor force) (modeled ILO estimate)",unemp_ilo
+"Unemployment, total (% of total labor force) (national estimate)",unemp_national
+Region,region
+DID_Group,did_group
