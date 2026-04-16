@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("start loading csv");
 
-  d3.csv("../data/Final_Imputed_Panel_Data.csv")
+  d3.csv("data/Final_Imputed_Panel_Data.csv")
     .then((raw) => {
       console.log("csv loaded", raw.length);
 
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => {
       console.error("CSV load failed:", error);
       renderTooltipPanel(
-        `Failed to load CSV. Current path is ../data/Final_Imputed_Panel_Data.csv. Error: ${error.message}`
+        `Failed to load CSV. Current path is data/Final_Imputed_Panel_Data.csv. Error: ${error.message}`
       );
     });
 
