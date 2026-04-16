@@ -1,5 +1,7 @@
 # BRI vs Non-BRI Development Visualization
 
+Website link: https://com-480-data-visualization.github.io/DVX/
+
 ## Overview
 
 This project explores whether countries participating in the Belt and Road Initiative (BRI) show different development trajectories compared to non-BRI countries. Instead of focusing on a single metric, we consider multiple dimensions such as economic growth, infrastructure, technology adoption, trade, and governance.
