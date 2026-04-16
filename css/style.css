@@ -614,15 +614,6 @@
   margin-bottom: 1.2rem;
 }
 
-.hyz-video {
-  /* position: absolute; */
-  margin: auto;
-  border-radius: 9px;
-
-  width: 720px;
-  height: 450px;
-}
-
 .big-container .container {
   margin-bottom: 2.4rem;
 }
@@ -642,17 +633,6 @@
   color: #45260a;
 }
 
-.plot-img-box {
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(78, 185, 235, 0.35),
-      rgba(230, 125, 34, 0.35)
-    ),
-    url("../img/hyz/hyz-5.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
 .section-text {
   max-width: 900px;
   margin: 0 auto;
@@ -661,28 +641,3 @@
   color: #4a2f2f;
 }
 
-.sound {
-  display: grid;
-  grid-template-rows: 1fr 2fr;
-  gap: 0.5rem;
-  border-radius: 11px;
-
-  background-image: linear-gradient(to left bottom, #f1d4d4, #8fd4e3);
-  overflow: hidden;
-}
-
-.sound-text-box {
-  padding: 2.4rem 3.2rem;
-  color: #45260a;
-}
-
-.sound-img-box {
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(78, 185, 235, 0.35),
-      rgba(230, 125, 34, 0.35)
-    ),
-    url("../img/hyz/hyz-6.jpg");
-  background-size: cover;
-  background-position: center;
-}
