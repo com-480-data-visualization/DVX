@@ -1,0 +1,218 @@
+iso3,country,region,status,group,is_bri
+ABW,Aruba,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+AFG,Afghanistan,BRI - South Asia,BRI Treatment Group,BRI,1
+AGO,Angola,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+ALB,Albania,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+AND,Andorra,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+ARE,United Arab Emirates,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+ARG,Argentina,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+ARM,Armenia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+ASM,American Samoa,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+ATG,Antigua and Barbuda,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+AUS,Australia,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+AUT,Austria,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+AZE,Azerbaijan,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+BDI,Burundi,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+BEL,Belgium,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+BEN,Benin,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+BFA,Burkina Faso,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+BGD,Bangladesh,BRI - South Asia,BRI Treatment Group,BRI,1
+BGR,Bulgaria,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+BHR,Bahrain,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+BHS,"Bahamas, The",Non-BRI,Control Group (Non-BRI),Non-BRI,0
+BIH,Bosnia and Herzegovina,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+BLR,Belarus,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+BLZ,Belize,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+BMU,Bermuda,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+BOL,Bolivia,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+BRA,Brazil,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+BRB,Barbados,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+BRN,Brunei Darussalam,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+BTN,Bhutan,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+BWA,Botswana,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+CAF,Central African Republic,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+CAN,Canada,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+CHE,Switzerland,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+CHI,Channel Islands,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+CHL,Chile,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+CHN,China,China (Source Country),China (Source Country),China,0
+CIV,Cote d'Ivoire,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+CMR,Cameroon,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+COD,"Congo, Dem. Rep.",Non-BRI,Control Group (Non-BRI),Non-BRI,0
+COG,"Congo, Rep.",BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+COL,Colombia,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+COM,Comoros,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+CPV,Cabo Verde,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+CRI,Costa Rica,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+CUB,Cuba,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+CUW,Curacao,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+CYM,Cayman Islands,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+CYP,Cyprus,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+CZE,Czechia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+DEU,Germany,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+DJI,Djibouti,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+DMA,Dominica,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+DNK,Denmark,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+DOM,Dominican Republic,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+DZA,Algeria,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+ECU,Ecuador,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+EGY,"Egypt, Arab Rep.",BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+ERI,Eritrea,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+ESP,Spain,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+EST,Estonia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+ETH,Ethiopia,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+FIN,Finland,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+FJI,Fiji,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+FRA,France,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+FRO,Faroe Islands,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+FSM,"Micronesia, Fed. Sts.",BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+GAB,Gabon,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+GBR,United Kingdom,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+GEO,Georgia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+GHA,Ghana,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+GIB,Gibraltar,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+GIN,Guinea,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+GMB,"Gambia, The",BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+GNB,Guinea-Bissau,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+GNQ,Equatorial Guinea,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+GRC,Greece,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+GRD,Grenada,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+GRL,Greenland,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+GTM,Guatemala,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+GUM,Guam,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+GUY,Guyana,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+HKG,"Hong Kong SAR, China",Non-BRI,Control Group (Non-BRI),Non-BRI,0
+HND,Honduras,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+HRV,Croatia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+HTI,Haiti,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+HUN,Hungary,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+IDN,Indonesia,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+IMN,Isle of Man,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+IND,India,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+IRL,Ireland,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+IRN,"Iran, Islamic Rep.",BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+IRQ,Iraq,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+ISL,Iceland,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+ISR,Israel,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+ITA,Italy,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+JAM,Jamaica,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+JOR,Jordan,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+JPN,Japan,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+KAZ,Kazakhstan,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+KEN,Kenya,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+KGZ,Kyrgyz Republic,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+KHM,Cambodia,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+KIR,Kiribati,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+KNA,St. Kitts and Nevis,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+KOR,"Korea, Rep.",BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+KWT,Kuwait,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+LAO,Lao PDR,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+LBN,Lebanon,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+LBR,Liberia,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+LBY,Libya,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+LCA,St. Lucia,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+LIE,Liechtenstein,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+LKA,Sri Lanka,BRI - South Asia,BRI Treatment Group,BRI,1
+LSO,Lesotho,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+LTU,Lithuania,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+LUX,Luxembourg,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+LVA,Latvia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+MAC,"Macao SAR, China",Non-BRI,Control Group (Non-BRI),Non-BRI,0
+MAF,St. Martin (French part),Non-BRI,Control Group (Non-BRI),Non-BRI,0
+MAR,Morocco,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+MCO,Monaco,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+MDA,Moldova,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+MDG,Madagascar,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+MDV,Maldives,BRI - South Asia,BRI Treatment Group,BRI,1
+MEX,Mexico,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+MHL,Marshall Islands,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+MKD,North Macedonia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+MLI,Mali,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+MLT,Malta,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+MMR,Myanmar,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+MNE,Montenegro,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+MNG,Mongolia,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+MNP,Northern Mariana Islands,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+MOZ,Mozambique,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+MRT,Mauritania,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+MUS,Mauritius,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+MWI,Malawi,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+MYS,Malaysia,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+NAM,Namibia,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+NCL,New Caledonia,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+NER,Niger,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+NGA,Nigeria,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+NIC,Nicaragua,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+NLD,Netherlands,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+NOR,Norway,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+NPL,Nepal,BRI - South Asia,BRI Treatment Group,BRI,1
+NRU,Nauru,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+NZL,New Zealand,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+OMN,Oman,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+PAK,Pakistan,BRI - South Asia,BRI Treatment Group,BRI,1
+PAN,Panama,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+PER,Peru,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+PHL,Philippines,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+PLW,Palau,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+PNG,Papua New Guinea,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+POL,Poland,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+PRI,Puerto Rico (US),Non-BRI,Control Group (Non-BRI),Non-BRI,0
+PRK,"Korea, Dem. People's Rep.",Non-BRI,Control Group (Non-BRI),Non-BRI,0
+PRT,Portugal,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+PRY,Paraguay,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+PSE,West Bank and Gaza,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+PYF,French Polynesia,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+QAT,Qatar,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+ROU,Romania,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+RUS,Russian Federation,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+RWA,Rwanda,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+SAU,Saudi Arabia,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+SDN,Sudan,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+SEN,Senegal,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+SGP,Singapore,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+SLB,Solomon Islands,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+SLE,Sierra Leone,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+SLV,El Salvador,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+SMR,San Marino,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+SOM,"Somalia, Fed. Rep.",BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+SRB,Serbia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+SSD,South Sudan,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+STP,Sao Tome and Principe,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+SUR,Suriname,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+SVK,Slovak Republic,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+SVN,Slovenia,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+SWE,Sweden,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+SWZ,Eswatini,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+SXM,Sint Maarten (Dutch part),Non-BRI,Control Group (Non-BRI),Non-BRI,0
+SYC,Seychelles,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+SYR,Syrian Arab Republic,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+TCA,Turks and Caicos Islands,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+TCD,Chad,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+TGO,Togo,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+THA,Thailand,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+TJK,Tajikistan,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+TKM,Turkmenistan,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+TLS,Timor-Leste,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+TON,Tonga,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+TTO,Trinidad and Tobago,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+TUN,Tunisia,BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+TUR,Turkiye,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+TUV,Tuvalu,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+TZA,Tanzania,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+UGA,Uganda,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+UKR,Ukraine,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+URY,Uruguay,BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+USA,United States,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+UZB,Uzbekistan,BRI - Europe & Central Asia,BRI Treatment Group,BRI,1
+VCT,St. Vincent and the Grenadines,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+VEN,"Venezuela, RB",BRI - Latin America & Caribbean,BRI Treatment Group,BRI,1
+VGB,British Virgin Islands,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+VIR,Virgin Islands (U.S.),Non-BRI,Control Group (Non-BRI),Non-BRI,0
+VNM,Viet Nam,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+VUT,Vanuatu,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+WSM,Samoa,BRI - East Asia & Pacific,BRI Treatment Group,BRI,1
+XKX,Kosovo,Non-BRI,Control Group (Non-BRI),Non-BRI,0
+YEM,"Yemen, Rep.",BRI - Middle East & North Africa,BRI Treatment Group,BRI,1
+ZAF,South Africa,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+ZMB,Zambia,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1
+ZWE,Zimbabwe,BRI - Sub-Saharan Africa,BRI Treatment Group,BRI,1

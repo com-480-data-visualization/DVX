@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="An interactive data visualization project exploring whether Belt and Road Initiative countries show different development trajectories from non-BRI countries."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="img/science-logo.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Your main JS -->
+    <script defer src="js/script.js"></script>
+
+    <title>BRI Development Dashboard</title>
+
+    <style>
+      .viz-box {
+        width: 100%;
+        min-height: 42rem;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 1.6rem;
+        box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.04);
+      }
+
+      .viz-small {
+        width: 100%;
+        min-height: 28rem;
+        background: #fff;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 1.2rem;
+        box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.04);
+      }
+
+      .viz-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        align-items: center;
+        margin-bottom: 1.6rem;
+      }
+
+      .viz-controls label {
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+
+      .viz-controls select {
+        font: inherit;
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        background: #fff;
+      }
+
+      .viz-note {
+        font-size: 1.3rem;
+        color: #555;
+        margin-top: 1rem;
+      }
+
+      .legend-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-size: 1.4rem;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .legend-color {
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 4px;
+      }
+
+      .filter-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        font-size: 1.4rem;
+      }
+
+      .tooltip-box {
+        font-size: 1.35rem;
+        line-height: 1.5;
+        color: #333;
+      }
+
+      .tooltip-box strong {
+        display: block;
+        margin-bottom: 0.6rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#">
+        <!-- <img class="logo" alt="Project logo" src="img/science-1.png" /> -->
+      </a>
+
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="#overview">Overview</a></li>
+          <li><a class="main-nav-link" href="#trends">Time Trends</a></li>
+          <li><a class="main-nav-link" href="#comparison">Comparison</a></li>
+          <!-- <li><a class="main-nav-link" href="#correlation">Correlation</a></li> -->
+          <!-- <li><a class="main-nav-link nav-cta" href="#explore">Explore</a></li> -->
+        </ul>
+      </nav>
+
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+    </header>
+
+    <main>
+      <section class="section-hero" id="overview">
+        <div class="hero">
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              Belt and Road Initiative: Development Paths in Comparison
+            </h1>
+            <p class="hero-description">
+              This project explores whether countries participating in the Belt
+              and Road Initiative show different development trajectories from
+              comparable non-BRI countries. Using World Development Indicators,
+              we examine changes in economic performance, infrastructure,
+              technology adoption, governance, and trade over time.
+            </p>
+
+            <!-- <a href="#explore" class="btn btn--full margin-right-sm">
+              Start Exploring &darr;
+            </a> -->
+            <!-- <a href="#trends" class="btn btn--outline">View Time Trends</a> -->
+          </div>
+          <div class="hero-img-box">
+            <picture>
+              <source srcset="img/train.jpg" type="image/png" />
+              <img
+                src="img/train.jpg"
+                class="hero-img"
+                alt="Dashboard hero illustration"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-cta" id="explore">
+        <div class="container">
+          <div class="cta">
+            <div class="cta-text-box">
+              <h2 class="heading-secondary">Project Introduction</h2>
+              <p class="cta-text">
+                The Belt and Road Initiative, launched in 2013, is one of the
+                most visible international development frameworks of the last
+                decade. It is often associated with infrastructure investment,
+                trade connectivity, and regional cooperation, but its broader
+                relationship with national development remains difficult to
+                assess. Our project uses a comparative and data-driven approach
+                to explore whether BRI countries differ from non-BRI countries
+                across multiple indicators rather than a single economic metric.
+              </p>
+              <p class="cta-text">
+                Instead of asking whether every country follows the same path,
+                the visualization highlights diversity across countries and
+                regions. Users can compare long-term temporal trends, group-level
+                distributions, and relationships between key indicators through
+                an interactive storytelling website.
+              </p>
+            </div>
+            <div
+              class="cta-img-box"
+              role="img"
+              aria-label="Project introduction illustration"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- <section class="section-how" id="how">
+        <div class="container center-text">
+          <span class="subheading">Visualization Components</span>
+          <h2 class="heading-secondary">
+            Four entry points to understand BRI-related development patterns
+          </h2>
+        </div>
+
+        <div class="container grid grid--2-cols grid--center-v">
+          <div class="step-text-box">
+            <p class="step-number">01</p>
+            <h3 class="heading-tertiary">Temporal Trends</h3>
+            <p class="step-description">
+              A line-chart section shows how indicators such as GDP per capita,
+              internet use, exports, and electricity access evolve over time.
+              This helps users compare trajectories before and after the 2013
+              BRI announcement.
+            </p>
+          </div>
+
+          <div class="step-img-box">
+            <img
+              src="img/atomic-energy.png"
+              class="step-img"
+              alt="Time-series placeholder"
+            />
+          </div>
+
+          <div class="step-img-box">
+            <img
+              src="img/pesticide.png"
+              class="step-img"
+              alt="Comparison chart placeholder"
+            />
+          </div>
+          <div class="step-text-box">
+            <p class="step-number">02</p>
+            <h3 class="heading-tertiary">Group Comparison</h3>
+            <p class="step-description">
+              A comparative section uses grouped visualizations such as boxplots
+              to compare BRI and non-BRI countries across regions.
+            </p>
+          </div>
+
+          <div class="step-text-box">
+            <p class="step-number">03</p>
+            <h3 class="heading-tertiary">Correlation View</h3>
+            <p class="step-description">
+              A heatmap summarizes how selected indicators relate to one another,
+              showing that development is multidimensional rather than captured
+              by a single metric.
+            </p>
+          </div>
+          <div class="step-img-box">
+            <img
+              src="img/fertilizer.png"
+              class="step-img qjy-img"
+              alt="Correlation heatmap placeholder"
+            />
+          </div>
+
+          <div class="step-img-box">
+            <img
+              src="img/movie-reel.png"
+              class="step-img hyz-img"
+              alt="Interactive dashboard placeholder"
+            />
+          </div>
+          <div class="step-text-box">
+            <p class="step-number">04</p>
+            <h3 class="heading-tertiary">Interactive Exploration</h3>
+            <p class="step-description">
+              Users can filter by country, region, and indicator, hover for
+              exact values, and move between sections of the narrative.
+            </p>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="section-time" id="trends">
+        <div class="container">
+          <span class="subheading">Main Visualization</span>
+          <h2 class="heading-secondary">Time Trends Across Countries</h2>
+        </div>
+
+        <div class="container">
+          <div class="thread">
+            <div class="thread-text-box">
+              
+              <p class="cta-text">
+                This section presents the main time-series visualization, showing how key development indicators evolve over time across Belt and Road Initiative (BRI) and non-BRI countries. Covering the period from 2000 onward, it enables a long-term view of economic and social change.
+              </p>
+
+              <p class="cta-text">
+                Particular attention is given to the period after 2013, when the BRI was formally introduced. By comparing trends before and after this point, users can explore whether BRI countries exhibit distinct development trajectories relative to non-BRI countries.
+              </p>
+
+              <p class="cta-text">
+                The interactive controls allow users to switch between indicators and filter by region or country, making it possible to uncover heterogeneous patterns and identify whether observed trends are consistent across regions or driven by specific cases.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-sec container grid-2-rows">
+        <div class="video-box">
+          <div class="viz-controls">
+            <label for="indicator-select">Indicator</label>
+            <select id="indicator-select"></select>
+
+            <label for="region-select">Region</label>
+            <select id="region-select"></select>
+          </div>
+
+          <div id="line-chart" class="viz-box"></div>
+          <p class="viz-note">
+            Solid line = BRI average, dashed line = non-BRI average. Vertical
+            line marks the year 2013.
+          </p>
+        </div>
+
+        <div class="container grid">
+          <aside class="plan-details">
+            Planned interaction: indicator selector, region filter, hover values,
+            and a highlighted marker for 2013.
+          </aside>
+        </div>
+      </section>
+
+      <section class="big-container" id="comparison">
+        <div class="container center-text">
+          <span class="subheading">Comparative Analysis</span>
+          <h2 class="heading-tertiary">
+            BRI and Non-BRI Countries in Cross-Section
+          </h2>
+        </div>
+
+        <section class="section-pricing">
+          <div class="container">
+            <span class="subheading">Baseline Comparison</span>
+            <div class="plot">
+              <div class="plot-img-box" role="img">
+                <div id="boxplot-chart" class="viz-box"></div>
+              </div>
+              <div class="plot-text-box">
+                <p class="section-text">
+                  This section compares the distribution of development indicators between Belt and Road Initiative (BRI) countries and non-BRI countries for a selected baseline year. Rather than focusing only on average values, we use distribution-based visualizations such as boxplots to highlight variability within each group.
+                </p>
+
+                <p class="section-text">
+                  The chart above shows how GDP per capita differs across regions participating in the BRI. European BRI countries tend to exhibit higher median income levels, while African and Asian BRI regions show lower medians but varying degrees of dispersion. This suggests that development within BRI regions is not uniform and may depend on regional economic structure.
+                </p>
+
+                <p class="section-text">
+                  By allowing users to adjust the comparison year, this view makes it possible to explore how disparities evolve over time and whether BRI participation is associated with convergence or divergence in economic outcomes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- <section class="section-testimonials" id="correlation">
+          <div class="testimonials-container">
+            <span class="subheading">Indicator Relationships</span>
+            <h2 class="heading-secondary"></h2>
+
+            <div class="testimonials">
+              <figure class="testimonial">
+                <blockquote class="testimonial-text">
+                  The correlation view helps explain why a single-indicator
+                  narrative is insufficient.
+                </blockquote>
+              </figure>
+
+              <figure class="testimonial testi-special">
+                <blockquote class="testimonial-text">
+                  Economic, technological, and governance variables often move
+                  together in complex ways.
+                </blockquote>
+              </figure>
+
+              <figure class="testimonial">
+                <blockquote class="testimonial-text">
+                  This section can guide users toward more targeted exploration
+                  in the other views.
+                </blockquote>
+              </figure>
+            </div>
+          </div>
+
+          <div class="gallery">
+            <figure class="gallery-item">
+              <div id="heatmap-chart" class="viz-small"></div>
+            </figure>
+
+            <figure class="gallery-item">
+              <div id="legend-panel" class="viz-small"></div>
+            </figure>
+
+            <figure class="gallery-item">
+              <div id="region-filter-panel" class="viz-small"></div>
+            </figure>
+
+            <figure class="gallery-item">
+              <div id="tooltip-panel" class="viz-small"></div>
+            </figure>
+          </div>
+        </section> -->
+<!-- 
+        <section class="section-pricing">
+          <div class="container">
+            <span class="subheading">Data and Methods</span>
+            <div class="sound">
+              <div class="sound-text-box">
+                <p class="cta-text">
+                  Our data mainly come from the World Development Indicators
+                  dataset. Countries are labeled as BRI or non-BRI and grouped
+                  by region for comparison.
+                </p>
+                <p class="cta-text">
+                  The current version uses the project CSV to visualize group-level
+                  trajectories, cross-sectional distributions, and indicator relationships
+                  for BRI and non-BRI countries.
+                </p>
+              </div>
+              <div class="sound-img-box" role="img"></div>
+            </div>
+          </div>
+        </section>
+      </section> -->
+<!-- 
+      <section class="section-time">
+        <div class="container">
+          <h2 class="heading-secondary">Expected User Journey</h2>
+        </div>
+
+        <div class="container">
+          <div class="thread">
+            <div class="thread-text-box">
+              <p class="cta-text">
+                The user first encounters the research question in the overview,
+                then moves to the time-series section, continues to the
+                comparison section, and finally uses the correlation view to
+                place indicators in a broader context.
+              </p>
+              <p class="cta-text">
+                This structure turns the website into a visual story while still
+                leaving room for open-ended exploration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main> -->
+
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo-col">
+          <a href="#" class="footer-logo">
+            <!-- <img class="logo" alt="Project logo" src="img/science-1.png" /> -->
+          </a>
+
+          <ul class="social-links">
+            <!-- <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li> -->
+          </ul>
+
+          <p class="copyright">
+            COM-480 Data Visualization Project Prototype
+          </p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading">Dataset</p>
+          <address class="contacts">
+            <p class="address">World Development Indicators + BRI labels</p>
+            <p>
+              <a class="footer-link" href="#">World Bank Data</a><br />
+              <a class="footer-link" href="#">Project Documentation</a>
+            </p>
+          </address>
+        </div>
+
+        <!-- <nav class="nav-col">
+          <p class="footer-heading">Sections</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#overview">Overview</a></li>
+            <li><a class="footer-link" href="#trends">Time Trends</a></li>
+            <li><a class="footer-link" href="#comparison">Comparison</a></li>
+            <li><a class="footer-link" href="#correlation">Correlation</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Planned Tools</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">D3.js</a></li>
+            <li><a class="footer-link" href="#">HTML / CSS</a></li>
+            <li><a class="footer-link" href="#">JavaScript</a></li>
+            <li><a class="footer-link" href="#">CSV data processing</a></li>
+          </ul>
+        </nav> -->
+
+        <nav class="nav-col">
+          <p class="footer-heading">Team</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Changlan Chen</a></li>
+            <li><a class="footer-link" href="#">Yizhi Zhao</a></li>
+            <li><a class="footer-link" href="#">Kaile Chu</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
