@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="An interactive data visualization project exploring whether Belt and Road Initiative countries show different development trajectories from non-BRI countries."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="img/logo-cropped.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/plots.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script defer src="js/script.js"></script>
+    <script defer src="js/vis.js"></script>
+
+    <title>BRI Development Dashboard</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#overview">
+        <img class="logo" alt="BRI project logo" src="img/logo-cropped.png" />
+      </a>
+
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="#overview">Overview</a></li>
+          <li><a class="main-nav-link" href="#map">World Map</a></li>
+          <li><a class="main-nav-link" href="#trends">Time Trends</a></li>
+          <li><a class="main-nav-link" href="#snapshot">Snapshot</a></li>
+          <li><a class="main-nav-link" href="#change">Change</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
+    </header>
+
+    <main>
+      <section class="section-hero" id="overview">
+        <div class="hero">
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              Belt and Road Initiative: Development Paths in Comparison
+            </h1>
+            <p class="hero-description">
+              This project explores whether countries participating in the Belt
+              and Road Initiative show different development trajectories from
+              comparable non-BRI countries. Using World Development Indicators,
+              we compare long-run trends, country-level snapshots, and regional
+              changes across economic and infrastructure-related measures.
+            </p>
+            <a href="#map" class="btn btn--full margin-right-sm">Start Exploring &darr;</a>
+            <a href="#trends" class="btn btn--outline">View Trends</a>
+          </div>
+          <div class="hero-img-box">
+            <img
+              src="img/train.jpg"
+              class="hero-img"
+              alt="Freight train representing international connectivity"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-cta">
+        <div class="container">
+          <div class="cta">
+            <div class="cta-text-box">
+              <h2 class="heading-secondary">Project Introduction</h2>
+              <p class="cta-text">
+                Launched in 2013, the Belt and Road Initiative (BRI) is often
+                associated with infrastructure, trade connectivity, and regional
+                cooperation. But do BRI countries actually look different in the
+                data? This dashboard approaches that question descriptively,
+                comparing BRI and non-BRI countries across time and space.
+              </p>
+              <p class="cta-text">
+                Instead of reducing the story to one indicator, the site combines
+                a world map, long-run trend lines, a country snapshot scatter plot,
+                and a post-2013 change chart. Together, these views show both
+                average patterns and the heterogeneity hidden behind them.
+              </p>
+            </div>
+            <div class="cta-img-box" role="img" aria-label="Project introduction illustration"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-map" id="map">
+        <div class="container center-text">
+          <span class="subheading">Geographic Overview</span>
+          <h2 class="heading-secondary">Where Are BRI Countries Located?</h2>
+          <p class="map-description">
+            The map gives a spatial overview of BRI and non-BRI countries in our dataset.
+            Click any country to inspect its classification and open a radar profile of
+            its development indicators over time.
+          </p>
+        </div>
+
+        <div class="container">
+          <div id="world-map" class="map-box"></div>
+          <p class="map-legend-note">
+            Green countries are labeled as BRI participants, grey countries are non-BRI/control countries,
+            orange marks China, and light grey means no classification is available.
+          </p>
+          <div id="country-info" class="country-info-box">
+            Click a country on the map to inspect its classification and radar profile.
+          </div>
+        </div>
+      </section>
+
+      <section class="section-time" id="trends">
+        <div class="container">
+          <span class="subheading">Main Visualization</span>
+          <h2 class="heading-secondary">Time Trends Across Countries</h2>
+        </div>
+
+        <div class="container map-narrative">
+          <div class="thread">
+            <div class="thread-text-box">
+              <p class="cta-text">
+                This section keeps the main time-series view. It shows how key development indicators evolve
+                from 2000 onward for BRI and non-BRI countries.
+              </p>
+              <p class="cta-text">
+                The vertical reference lines highlight 2013, when the BRI was announced, and 2019 as a later
+                reference point. Together they help users inspect whether average trajectories appear to diverge,
+                converge, or remain similar across groups.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-sec container grid-2-rows">
+        <div class="video-box">
+          <div class="viz-controls">
+            <label for="indicator-select">Indicator</label>
+            <select id="indicator-select"></select>
+
+            <label for="region-select">Region</label>
+            <select id="region-select"></select>
+          </div>
+
+          <div id="line-chart" class="viz-box"></div>
+          <p class="viz-note">
+            Solid line = BRI average, dashed line = non-BRI average. The country selector is added automatically by the script.
+          </p>
+
+          <div class="insight-grid">
+            <div id="region-filter-panel" class="viz-small"></div>
+            <div id="tooltip-panel" class="viz-small"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-feature-viz" id="snapshot">
+        <div class="container center-text">
+          <span class="subheading">Country Snapshot</span>
+          <h2 class="heading-secondary">Development Snapshot in a Single Year</h2>
+        </div>
+
+        <div class="container feature-card">
+          <div class="feature-grid">
+            <div>
+              <div class="control-row">
+                <label for="snapshot-year">Year</label>
+                <input type="range" id="snapshot-year" min="2000" max="2020" step="1" value="2019" />
+                <span id="snapshot-year-value" style="font-size:1.5rem;font-weight:600;">2019</span>
+
+                <label for="snapshot-region">Region</label>
+                <select id="snapshot-region"></select>
+              </div>
+              <div id="snapshot-chart" class="viz-box"></div>
+              <p class="viz-note">
+                Each dot is a country. The x-axis shows GDP per capita (log scale), the y-axis shows internet use.
+                Color indicates BRI status. This makes within-group heterogeneity visible much better than a single summary statistic.
+              </p>
+            </div>
+
+            <div class="feature-text">
+              <p>
+                Instead of another boxplot, this snapshot view lets users see the spread of countries directly.
+                It answers a more intuitive question: <strong>where do individual countries sit</strong> in the
+                development space for a given year?
+              </p>
+              <p>
+                Countries in the upper-right tend to combine higher income with wider internet adoption, while those in the
+                lower-left are still earlier in that transition. Because every country appears as a point, outliers and clusters
+                become much easier to notice.
+              </p>
+              <ul class="feature-bullets">
+                <li>Use the year slider to move from early 2000s conditions to more recent snapshots.</li>
+                <li>Use the region filter to see whether the same BRI/non-BRI pattern holds within Africa, Asia, or Europe.</li>
+                <li>Hover a point to read the exact country values.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-change" id="change">
+        <div class="container center-text">
+          <span class="subheading">Change Since the BRI Launch</span>
+          <h2 class="heading-secondary">How Much Did Regions Change After 2013?</h2>
+        </div>
+
+        <div class="container feature-card">
+          <div class="feature-grid">
+            <div>
+              <div class="control-row">
+                <label for="change-indicator-select">Indicator</label>
+                <select id="change-indicator-select"></select>
+
+                <label for="change-year">End year</label>
+                <input type="range" id="change-year" min="2014" max="2020" step="1" value="2019" />
+                <span id="change-year-value" style="font-size:1.5rem;font-weight:600;">2019</span>
+              </div>
+              <div id="change-chart" class="viz-box"></div>
+              <p class="viz-note">
+                Bars show the change in regional averages between 2013 and the selected end year.
+                Positive bars indicate improvement on the selected indicator; negative bars indicate decline.
+              </p>
+            </div>
+
+            <div class="callout-box">
+              <h3>Why this view works better</h3>
+              <p>
+                Your earlier “Data and Methods” panel was mostly text. This replacement turns it into an analytical visualization.
+                The chart directly summarizes <strong>post-2013 change</strong>, which is probably one of the first comparisons a user wants to make.
+              </p>
+              <p>
+                The bar layout also complements the line chart nicely: the line chart shows full trajectories, while this view compresses them into a simple comparison of change magnitude.
+              </p>
+              <p>
+                Read it as descriptive evidence, not causal proof. It helps identify where BRI and non-BRI regions appear to move differently, and where they do not.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo-col">
+          <a href="#overview" class="footer-logo">
+            <img class="logo" alt="Project logo" src="img/logo-cropped.png" />
+          </a>
+          <p class="copyright">COM-480 Data Visualization Project Prototype</p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading">Dataset</p>
+          <address class="contacts">
+            <p class="address">World Development Indicators + BRI labels</p>
+            <p>
+              <a class="footer-link" href="https://data.worldbank.org/" target="_blank">World Bank Data</a><br />
+              <a class="footer-link" href="#overview">Project Overview</a>
+            </p>
+          </address>
+        </div>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Sections</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#map">World Map</a></li>
+            <li><a class="footer-link" href="#trends">Time Trends</a></li>
+            <li><a class="footer-link" href="#snapshot">Snapshot</a></li>
+            <li><a class="footer-link" href="#change">Change</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Tools</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">D3.js</a></li>
+            <li><a class="footer-link" href="#">HTML / CSS</a></li>
+            <li><a class="footer-link" href="#">JavaScript</a></li>
+            <li><a class="footer-link" href="#">CSV + GeoJSON</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Team</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Changlan Chen</a></li>
+            <li><a class="footer-link" href="#">Yizhi Zhao</a></li>
+            <li><a class="footer-link" href="#">Kaile Chu</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
