@@ -14,12 +14,65 @@
 
 .map-box {
   width: 100%;
-  height: 60rem;
+  height: 54rem;
   background-color: #fff;
   border-radius: 11px;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.08);
   overflow: hidden;
   position: relative;
+}
+
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(36rem, 1.15fr);
+  gap: 2.4rem;
+  align-items: stretch;
+}
+
+.map-panel,
+.country-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.map-panel {
+  min-width: 0;
+}
+
+.country-panel {
+  min-width: 0;
+  padding-top: 4.4rem;
+}
+
+.map-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.map-toolbar-note {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.map-reset-button {
+  border: 1px solid #c7d7dd;
+  background: #fff;
+  color: #0b7285;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.map-reset-button:hover {
+  background: #0b7285;
+  color: #fff;
+  border-color: #0b7285;
 }
 
 .country {
@@ -36,13 +89,18 @@
 }
 
 .country-info-box {
-  margin-top: 2.4rem;
-  padding: 2rem 2.4rem;
+  margin-top: 0;
+  padding: 1.2rem 1.4rem;
   font-size: 1.8rem;
   line-height: 1.6;
   background-color: #fff;
   border-radius: 11px;
   box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.06);
+  height: 54rem;
+  min-height: 54rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .map-tooltip {
@@ -60,39 +118,45 @@
 
 .radar-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.4rem;
-  margin-bottom: 1.6rem;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .radar-title {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 0.6rem;
+  line-height: 1.15;
+  margin-bottom: 0.2rem;
 }
 
 .radar-subtitle {
-  font-size: 1.4rem;
+  font-size: 1.05rem;
   line-height: 1.5;
   color: #666;
 }
 
 .radar-year-control {
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-size: 1.6rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  font-size: 1.15rem;
+  min-width: 0;
 }
 
 .radar-year-control select {
-  font-size: 1.6rem;
-  padding: 0.4rem 0.8rem;
+  font-size: 1.15rem;
+  padding: 0.3rem 0.6rem;
 }
 
 #radar-chart {
   width: 100%;
+  min-height: 36rem;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,8 +164,9 @@
 
 .radar-svg {
   width: 100%;
-  max-width: 60rem;
+  max-width: 100%;
   height: auto;
+  overflow: visible;
 }
 
 .radar-grid {
@@ -116,12 +181,12 @@
 }
 
 .radar-axis-label {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   fill: #333;
 }
 
 .radar-level-label {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   fill: #868e96;
 }
 
@@ -138,7 +203,7 @@
 }
 
 .radar-score-label {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   fill: #333;
   font-weight: 500;
 }
@@ -150,7 +215,7 @@
 }
 
 .radar-year-control {
-  min-width: 26rem;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -161,7 +226,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1.2rem;
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   color: #333;
 }
 
@@ -169,9 +234,9 @@
   border: none;
   background-color: #0b7285;
   color: #fff;
-  padding: 0.6rem 1.2rem;
+  padding: 0.45rem 1rem;
   border-radius: 999px;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   cursor: pointer;
 }
 
@@ -187,7 +252,7 @@
 .radar-year-scale {
   display: flex;
   justify-content: space-between;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   color: #777;
 }
 
@@ -276,8 +341,8 @@
 .map-narrative { margin-top: 2.4rem; }
 
 .map-legend-note {
-  max-width: 90rem;
-  margin: 1.6rem auto 0 auto;
+  max-width: none;
+  margin: 1.6rem 0 0 0;
   font-size: 1.4rem;
   line-height: 1.6;
   color: #666;
@@ -354,5 +419,23 @@
   .insight-grid,
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .map-box,
+  .country-info-box {
+    height: 57rem;
+  }
+
+  .country-panel {
+    padding-top: 0;
+  }
+
+  .map-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

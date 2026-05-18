@@ -120,19 +120,26 @@
           <h2 class="heading-secondary">Where Are BRI Countries Located?</h2>
           <p class="map-description">
             The map gives a spatial overview of BRI and non-BRI countries in our dataset.
-            Click any country to inspect its classification and open a radar profile of
-            its development indicators over time.
+            Click any country to inspect its classification and show its radar profile on the right.
           </p>
         </div>
 
-        <div class="container">
-          <div id="world-map" class="map-box"></div>
-          <p class="map-legend-note">
-            Green countries are labeled as BRI participants, grey countries are non-BRI/control countries,
-            orange marks China, and light grey means no classification is available.
-          </p>
-          <div id="country-info" class="country-info-box">
-            Click a country on the map to inspect its classification and radar profile.
+        <div class="container map-layout">
+          <div class="map-panel">
+            <div class="map-toolbar">
+              <span class="map-toolbar-note">Scroll to zoom, drag to pan.</span>
+              <button id="map-reset-zoom" class="map-reset-button" type="button">Reset view</button>
+            </div>
+            <div id="world-map" class="map-box"></div>
+            <p class="map-legend-note">
+              Green countries are labeled as BRI participants, grey countries are non-BRI/control countries,
+              orange marks China, and light grey means no classification is available.
+            </p>
+          </div>
+          <div class="country-panel">
+            <div id="country-info" class="country-info-box">
+              Click a country on the map to inspect its classification and radar profile.
+            </div>
           </div>
         </div>
       </section>

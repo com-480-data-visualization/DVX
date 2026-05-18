@@ -24,13 +24,45 @@ async function drawWorldMap() {
   if (!mapElement) return;
 
   const width = mapElement.clientWidth;
-  const height = 600;
+  const height = mapElement.clientHeight || 540;
 
-  const svg = d3.select("#world-map").append("svg").attr("width", width).attr("height", height);
+  const svg = d3
+    .select("#world-map")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("viewBox", `0 0 ${width} ${height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .style("touch-action", "none");
+  const mapLayer = svg.append("g").attr("class", "map-layer");
+  svg.append("rect").attr("width", width).attr("height", height).attr("fill", "transparent").style("pointer-events", "none");
   const tooltip = d3.select("#world-map").append("div").attr("class", "map-tooltip");
 
   const projection = d3.geoNaturalEarth1().scale(width / 5.8).rotate([-100, 0]).translate([width / 2, height / 2]);
   const path = d3.geoPath().projection(projection);
+
+  const zoom = d3
+    .zoom()
+    .scaleExtent([1, 7])
+    .translateExtent([
+      [0, 0],
+      [width, height],
+    ])
+    .extent([
+      [0, 0],
+      [width, height],
+    ])
+    .on("zoom", function (event) {
+      mapLayer.attr("transform", event.transform);
+    });
+
+  svg.call(zoom);
+  const resetButton = d3.select("#map-reset-zoom");
+  if (!resetButton.empty()) {
+    resetButton.on("click", function () {
+      svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity);
+    });
+  }
 
   let world;
   let statusData;
@@ -68,7 +100,8 @@ async function drawWorldMap() {
     .domain(["china", "bri", "non_bri", "unknown"])
     .range(["#d9480f", "#2f9e44", "#adb5bd", "#e9ecef"]);
 
-  svg.selectAll("path")
+  mapLayer
+    .selectAll("path")
     .data(world.features)
     .join("path")
     .attr("class", "country")
@@ -160,6 +193,19 @@ let selectedRadarCountry = null;
 let selectedRadarYear = 2020;
 let radarPlayTimer = null;
 let radarIsPlaying = false;
+let radarDataPromise = null;
+let radarDataCache = null;
+
+function getRadarData() {
+  if (radarDataCache) return Promise.resolve(radarDataCache);
+  if (!radarDataPromise) {
+    radarDataPromise = d3.csv("data/Final_Imputed_Panel_Data.csv").then(function (data) {
+      radarDataCache = data;
+      return data;
+    });
+  }
+  return radarDataPromise;
+}
 
 const radarIndicators = [
   { label: "GDP per capita", column: "GDP per capita (current US$)" },
@@ -209,7 +255,7 @@ async function drawRadarChart(iso3, countryName, keepPlaying = false) {
   selectedRadarCountry = { iso3, countryName };
   if (!keepPlaying) stopRadarYearAnimation();
 
-  const allData = await d3.csv("data/Final_Imputed_Panel_Data.csv");
+  const allData = await getRadarData();
   const years = Array.from(new Set(allData.map((d) => +d["Year"]).filter((d) => !isNaN(d)))).sort((a, b) => a - b);
   if (!years.includes(selectedRadarYear)) selectedRadarYear = d3.max(years);
 
@@ -264,15 +310,15 @@ async function drawRadarChart(iso3, countryName, keepPlaying = false) {
     return { axis: indicator.label, value: score, rawValue };
   });
 
-  const width = 520;
-  const height = 520;
-  const margin = 90;
+  const width = 600;
+  const height = 600;
+  const margin = 74;
   const radius = Math.min(width, height) / 2 - margin;
   const levels = 5;
   const angleSlice = (Math.PI * 2) / radarValues.length;
 
   const svg = d3.select("#radar-chart").append("svg").attr("viewBox", `0 0 ${width} ${height}`).attr("class", "radar-svg");
-  const g = svg.append("g").attr("transform", `translate(${width / 2}, ${height / 2})`);
+  const g = svg.append("g").attr("transform", `translate(${width / 2 + 15}, ${height / 2})`);
   const rScale = d3.scaleLinear().domain([0, 100]).range([0, radius]);
 
   for (let level = 1; level <= levels; level++) {
@@ -289,12 +335,16 @@ async function drawRadarChart(iso3, countryName, keepPlaying = false) {
     const angle = angleSlice * i - Math.PI / 2;
     const x = radius * Math.cos(angle);
     const y = radius * Math.sin(angle);
+    const isRightSide = Math.cos(angle) > 0.35;
+    const isLeftSide = Math.cos(angle) < -0.35;
+    const labelRadius = radius + 25;
+    const verticalNudge = Math.sin(angle) > 0.35 ? 6 : Math.sin(angle) < -0.35 ? -6 : 0;
     g.append("line").attr("x1", 0).attr("y1", 0).attr("x2", x).attr("y2", y).attr("class", "radar-axis");
     g.append("text")
-      .attr("x", (radius + 28) * Math.cos(angle))
-      .attr("y", (radius + 28) * Math.sin(angle))
+      .attr("x", labelRadius * Math.cos(angle) + (isRightSide ? 10 : isLeftSide ? -10 : 0))
+      .attr("y", labelRadius * Math.sin(angle) + verticalNudge)
       .attr("class", "radar-axis-label")
-      .attr("text-anchor", Math.cos(angle) > 0.2 ? "start" : Math.cos(angle) < -0.2 ? "end" : "middle")
+      .attr("text-anchor", isRightSide ? "start" : isLeftSide ? "end" : "middle")
       .attr("dominant-baseline", "middle")
       .text(d.axis);
   });
