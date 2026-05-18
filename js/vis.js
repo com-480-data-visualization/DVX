@@ -312,13 +312,13 @@ async function drawRadarChart(iso3, countryName, keepPlaying = false) {
 
   const width = 600;
   const height = 600;
-  const margin = 74;
+  const margin = 90;
   const radius = Math.min(width, height) / 2 - margin;
   const levels = 5;
   const angleSlice = (Math.PI * 2) / radarValues.length;
 
   const svg = d3.select("#radar-chart").append("svg").attr("viewBox", `0 0 ${width} ${height}`).attr("class", "radar-svg");
-  const g = svg.append("g").attr("transform", `translate(${width / 2 + 15}, ${height / 2})`);
+  const g = svg.append("g").attr("transform", `translate(${width / 2 + 13}, ${height / 2})`);
   const rScale = d3.scaleLinear().domain([0, 100]).range([0, radius]);
 
   for (let level = 1; level <= levels; level++) {
